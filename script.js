@@ -1,232 +1,246 @@
-/* ==========================================
-   ArtJeen.Store - Functional JavaScript
-   ========================================== */
+// ==========================================
+// 1. PRODUCT DATA SYSTEM (Easy to Edit)
+// ==========================================
 
-// 1. Product Data (Affiliate Product List)
 const products = [
-    // Arts & Craft
     {
-        id: 1,
-        name: "Premium Acrylic Paint Set",
-        description: "24 colors non-toxic acrylic paint for canvas, fabric, and wood.",
-        category: "Arts & Craft",
-        price: "$29.99",
-        image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&q=80"
+        name: "Professional Artist Sketch Kit",
+        image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&q=80",
+        description: "High-quality sketch pencils, charcoal set, and paper pad for professionals.",
+        price: "₹1,299",
+        category: "Arts & Craft Supplies",
+        affiliateLink: "https://example.com/sketch-kit",
+        featured: true
     },
     {
-        id: 2,
-        name: "Sketching Drawing Kit",
-        description: "Complete graphite pencil set with sketchbook and erasers.",
-        category: "Arts & Craft",
-        price: "$19.99",
-        image: "https://images.unsplash.com/photo-1513544785410-4568d3b696d2?w=500&q=80"
-    },
-    // Fashion
-    {
-        id: 3,
-        name: "Classic Cotton T-Shirt",
-        description: "100% organic cotton crew neck t-shirt. Comfortable fit.",
-        category: "Fashion",
-        price: "$15.99",
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80"
+        name: "Acrylic Paint Set - 24 Colors",
+        image: "https://images.unsplash.com/photo-1518895312252-25b03aee1a7f?w=500&q=80",
+        description: "Non-toxic acrylic paints suitable for canvas, wood, and fabric.",
+        price: "₹899",
+        category: "Arts & Craft Supplies",
+        affiliateLink: "https://example.com acrylic-paints",
+        featured: false
     },
     {
-        id: 4,
-        name: "Denim Jacket",
-        description: "Vintage style slim fit denim jacket for men and women.",
-        category: "Fashion",
-        price: "$45.99",
-        image: "https://images.unsplash.com/photo-1548126032-0794f5d8d0d9?w=500&q=80"
-    },
-    // Shoes
-    {
-        id: 5,
-        name: "Running Sneakers",
-        description: "Lightweight breathable sports shoes for running and gym.",
-        category: "Shoes",
-        price: "$59.99",
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80"
+        name: "Premium Cotton T-Shirt",
+        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80",
+        description: "100% organic cotton, breathable fabric. Perfect for daily wear.",
+        price: "₹599",
+        category: "Fashion & Clothing",
+        affiliateLink: "https://example.com/tshirt",
+        featured: true
     },
     {
-        id: 6,
-        name: "Canvas Slip-Ons",
-        description: "Casual daily wear summer shoes. Easy to wear.",
-        category: "Shoes",
-        price: "$24.99",
-        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80"
-    },
-    // Electronics
-    {
-        id: 7,
-        name: "Wireless Bluetooth Earbuds",
-        description: "Noise cancelling headphones with 20h battery life.",
-        category: "Electronics",
-        price: "$49.99",
-        image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8b5?w=500&q=80"
+        name: "Denim Jacket - Classic Fit",
+        image: "https://images.unsplash.com/photo-1523205565295-f8e916256112?w=500&q=80",
+        description: "Vintage style denim jacket with multiple pockets.",
+        price: "₹1,499",
+        category: "Fashion & Clothing",
+        affiliateLink: "https://example.com/denim-jacket",
+        featured: false
     },
     {
-        id: 8,
-        name: "Smart Watch Series 5",
-        description: "Waterproof fitness tracker heart rate monitor.",
-        category: "Electronics",
-        price: "$89.99",
-        image: "https://images.unsplash.com/photo-1579586337278-3befd0b3b05c?w=500&q=80"
-    },
-    // Home
-    {
-        id: 9,
-        name: "Modern Table Lamp",
-        description: "Minimalist desk lamp with LED bulb. Dimmable touch control.",
-        category: "Home",
-        price: "$32.99",
-        image: "https://images.unsplash.com/photo-1507473888900-52e1ad1459ce?w=500&q=80"
+        name: "Running Sneakers - Air Cushion",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80",
+        description: "Lightweight running shoes with air cushion technology.",
+        price: "₹2,199",
+        category: "Shoes & Footwear",
+        affiliateLink: "https://example.com/sneakers",
+        featured: true
     },
     {
-        id: 10,
-        name: "Bamboo Storage Box",
-        description: "Eco-friendly organizer for home and office.",
-        category: "Home",
-        price: "$18.50",
-        image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?w=500&q=80"
-    },
-    // Accessories
-    {
-        id: 11,
-        name: "Leather Wallet",
-        description: "Genuine leather bifold wallet. RFID blocking.",
-        category: "Accessories",
-        price: "$35.00",
-        image: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500&q=80"
+        name: "Casual Canvas Shoes",
+        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80",
+        description: "Stylish canvas shoes for casual outings. Durable and comfortable.",
+        price: "₹899",
+        category: "Shoes & Footwear",
+        affiliateLink: "https://example.com/canvas-shoes",
+        featured: false
     },
     {
-        id: 12,
-        name: "Sunglasses",
-        description: "Polarized aviator style UV400 protection.",
-        category: "Accessories",
-        price: "$22.00",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80"
-    },
-    // Stationery
-    {
-        id: 13,
-        name: "Spiral Notebook Pack",
-        description: "5pack college ruled notebooks. 200 sheets total.",
-        category: "Stationery",
-        price: "$12.99",
-        image: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=500&q=80"
+        name: "Wireless Bluetooth Headphones",
+        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80",
+        description: "Noise-canceling headphones with 30-hour battery life.",
+        price: "₹2,999",
+        category: "Electronics & Gadgets",
+        affiliateLink: "https://example.com/headphones",
+        featured: true
     },
     {
-        id: 14,
-        name: "Gel Pen Set",
-        description: "12 vibrant color gel pens for journaling and note taking.",
-        category: "Stationery",
-        price: "$9.99",
-        image: "https://images.unsplash.com/photo-1516961642265-531546e84af2?w=500&q=80"
+        name: "Smart Watch - Fitness Tracker",
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
+        description: "Track heart rate, steps, and sleep. Waterproof design.",
+        price: "₹3,499",
+        category: "Electronics & Gadgets",
+        affiliateLink: "https://example.com/smart-watch",
+        featured: true
+    },
+    {
+        name: "Minimalist Table Lamp",
+        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&q=80",
+        description: "Modern LED table lamp with touch dimmer.",
+        price: "₹1,199",
+        category: "Home & Lifestyle",
+        affiliateLink: "https://example.com/lamp",
+        featured: false
+    },
+    {
+        name: "Soft Cotton Bed Sheets",
+        image: "https://images.unsplash.com/photo-1616627180082-1f088458321b?w=500&q=80",
+        description: "400 thread count Egyptian cotton bed sheets. Fade resistant.",
+        price: "₹1,899",
+        category: "Home & Lifestyle",
+        affiliateLink: "https://example.com/bedsheets",
+        featured: true
+    },
+    {
+        name: "Leather Wallet - Slim Design",
+        image: "https://images.unsplash.com/photo-1627123424574-181ce5171c98?w=500&q=80",
+        description: "Genuine leather wallet with RFID protection.",
+        price: "₹699",
+        category: "Accessories & Gifts",
+        affiliateLink: "https://example.com/wallet",
+        featured: false
+    },
+    {
+        name: "Designer Sunglasses",
+        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80",
+        description: "UV400 protection with polarized lenses. Stylish frame.",
+        price: "₹899",
+        category: "Accessories & Gifts",
+        affiliateLink: "https://example.com/sunglasses",
+        featured: true
     }
 ];
 
-// 2. DOM Elements
-const productContainer = document.getElementById('product-grid-container');
-const searchInput = document.getElementById('search-input');
-const searchBtn = document.getElementById('search-btn');
-const categoryBtns = document.querySelectorAll('.cat-btn');
+// Fallback image for broken URLs
+const fallbackImage = "https://placehold.co/400x400/131313/FFF?text=No+Image";
 
-// 3. Function to Render Products
-function renderProducts(productList) {
-    productContainer.innerHTML = ''; // Clear current products
-    
+// ==========================================
+// 2. DOM ELEMENTS
+// ==========================================
+
+const mainGrid = document.getElementById('mainProductGrid');
+const newArrivalsGrid = document.getElementById('newArrivalsGrid');
+const featuredGrid = document.getElementById('featuredGrid');
+const searchInput = document.getElementById('searchInput');
+const categoryTitle = document.getElementById('currentCategoryTitle');
+const scrollTopBtn = document.getElementById('scrollTopBtn');
+const mobileToggle = document.querySelector('.mobile-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+// ==========================================
+// 3. FUNCTIONS
+// ==========================================
+
+// Generate Product Card HTML
+function createProductCard(product) {
+    return `
+        <div class="product-card">
+            <div class="product-image">
+                <img src="${product.image}" alt="${product.name}" onerror="this.src='${fallbackImage}'">
+                <span class="category-tag">${product.category}</span>
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">${product.name}</h3>
+                <p class="product-desc">${product.description}</p>
+                <div class="product-price">${product.price}</div>
+                <a href="${product.affiliateLink}" target="_blank" class="buy-btn">
+                    Buy Now <i class="fas fa-external-link-alt"></i>
+                </a>
+            </div>
+        </div>
+    `;
+}
+
+// Render Products to Grid
+function renderProducts(gridElement, productList) {
     if (productList.length === 0) {
-        productContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No products found.</p>';
+        gridElement.innerHTML = '<p class="no-products">No products found.</p>';
+        return;
+    }
+    gridElement.innerHTML = productList.map(product => createProductCard(product)).join('');
+}
+
+// Filter Products by Category
+function filterProducts(category) {
+    const titleMap = {
+        "All": "All Products",
+        "Arts & Craft Supplies": "Arts & Craft Supplies",
+        "Fashion & Clothing": "Fashion & Clothing",
+        "Shoes & Footwear": "Shoes & Footwear",
+        "Electronics & Gadgets": "Electronics & Gadgets",
+        "Home & Lifestyle": "Home & Lifestyle",
+        "Accessories & Gifts": "Accessories & Gifts"
+    };
+
+    categoryTitle.innerText = titleMap[category] || "All Products";
+
+    if (category === 'All') {
+        renderProducts(mainGrid, products);
+    } else {
+        const filtered = products.filter(p => p.category === category);
+        renderProducts(mainGrid, filtered);
+    }
+    
+    // Smooth scroll
+    document.getElementById('all-products').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Search Functionality
+function handleSearch(query) {
+    const lowerQuery = query.toLowerCase().trim();
+
+    if (lowerQuery === "") {
+        filterProducts("All");
         return;
     }
 
-    productList.forEach(product => {
-        const productHTML = `
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="${product.image}" alt="${product.name}" onerror="this.src='https://via.placeholder.com/500x500?text=ArtJeen+Product'">
-                </div>
-                <div class="product-info">
-                    <span class="product-category">${product.category}</span>
-                    <h3 class="product-title">${product.name}</h3>
-                    <p class="product-desc">${product.description}</p>
-                    <div class="product-price">${product.price}</div>
-                    <button class="btn-buy" onclick="buyProduct('${product.name}')">Buy Now</button>
-                </div>
-            </div>
-        `;
-        productContainer.innerHTML += productHTML;
-    });
+    const filtered = products.filter(product => 
+        product.name.toLowerCase().includes(lowerQuery) || 
+        product.category.toLowerCase().includes(lowerQuery) ||
+        product.description.toLowerCase().includes(lowerQuery)
+    );
+
+    categoryTitle.innerText = `Search Results for "${query}"`;
+    renderProducts(mainGrid, filtered);
 }
 
-// 4. Filter Function (Search + Category)
-function filterProducts() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const activeCategoryBtn = document.querySelector('.cat-btn.active');
-    const activeCategory = activeCategoryBtn ? activeCategoryBtn.getAttribute('data-category') : 'all';
-
-    const filtered = products.filter(product => {
-        // Match Category
-        const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
-        
-        // Match Search (Name, Description, or Category)
-        const matchesSearch = product.name.toLowerCase().includes(searchTerm) || 
-                              product.description.toLowerCase().includes(searchTerm) ||
-                              product.category.toLowerCase().includes(searchTerm);
-
-        return matchesCategory && matchesSearch;
-    });
-
-    renderProducts(filtered);
-}
-
-// 5. Event Listeners
-
-// Search Button Click
-searchBtn.addEventListener('click', filterProducts);
-
-// Search Input (Real-time typing)
-searchInput.addEventListener('input', filterProducts);
-
-// Category Buttons Click
-categoryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Remove active class from all
-        categoryBtns.forEach(b => b.classList.remove('active'));
-        // Add active to clicked
-        btn.classList.add('active');
-        // Filter
-        filterProducts();
-    });
-});
-
-// 6. Buy Now Function (Affiliate Link Placeholder)
-function buyProduct(productName) {
-    // In a real scenario, this would redirect to an affiliate link
-    alert(`Redirecting to purchase: ${productName}\n\n(This is a demo. In production, this links to Amazon/eBay via your affiliate ID)`);
-}
-
-// 7. Mobile Menu Toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-mobileMenuBtn.addEventListener('click', () => {
+// Mobile Menu Toggle
+function toggleMobileMenu() {
     navLinks.classList.toggle('active');
-});
+}
 
-// 8. Navbar Scroll Effect (Change background on scroll)
-window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = '#131921';
-        navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
-    } else {
-        navbar.style.background = '#131921';
-        navbar.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
-    }
-});
+// ==========================================
+// 4. INITIALIZATION
+// ==========================================
 
-// 9. Initial Render
 document.addEventListener('DOMContentLoaded', () => {
-    renderProducts(products);
+    
+    // Render All Products
+    renderProducts(mainGrid, products);
+
+    // Render New Arrivals (First 4 products)
+    renderProducts(newArrivalsGrid, products.slice(0, 4));
+
+    // Render Featured Products (Filter by featured: true)
+    const featuredProducts = products.filter(p => p.featured);
+    renderProducts(featuredGrid, featuredProducts);
+
+    // Search Event Listener
+    searchInput.addEventListener('input', (e) => {
+        handleSearch(e.target.value);
+    });
+
+    // Mobile Menu Click
+    mobileToggle.addEventListener('click', toggleMobileMenu);
+});
+
+// Scroll to Top Button Visibility
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+        scrollTopBtn.style.display = 'block';
+    } else {
+        scrollTopBtn.style.display = 'none';
+    }
 });
