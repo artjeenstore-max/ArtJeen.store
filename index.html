@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ArtJeen.Store - Your premier affiliate shopping destination for Arts, Fashion, Electronics, and more. Shop smart. Create more.">
+    <meta name="keywords" content="ArtJeen, Online Shopping, Affiliate, Arts, Crafts, Electronics, Fashion">
+    <title>ArtJeen.Store - Shop Smart. Create More.</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Art<span>Jeen</span>.Store</a>
+            
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for products, brands, categories...">
+                <button id="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#products">Deals</a></li>
+                <li><a href="#footer">Contact</a></li>
+            </ul>
+            
+            <div class="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Shop Smart. Create More. Live Better.</h1>
+            <p>Discover the best curated products from top brands delivered to your door.</p>
+            <a href="#products" class="btn-primary">Start Shopping</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section-container" id="categories">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="categories-wrapper" id="category-filters">
+            <button class="cat-btn active" data-category="all">All</button>
+            <button class="cat-btn" data-category="Arts & Craft">🎨 Arts & Craft</button>
+            <button class="cat-btn" data-category="Fashion">👕 Fashion</button>
+            <button class="cat-btn" data-category="Shoes">👟 Shoes</button>
+            <button class="cat-btn" data-category="Electronics">📱 Electronics</button>
+            <button class="cat-btn" data-category="Home">🏠 Home</button>
+            <button class="cat-btn" data-category="Accessories">🎁 Accessories</button>
+            <button class="cat-btn" data-category="Stationery">📚 Stationery</button>
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="section-container" id="products">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="product-grid" id="product-grid-container">
+            <!-- Products will be injected here by JS -->
+        </div>
+    </section>
+
+    <!-- Affiliate Disclaimer Banner -->
+    <div class="affiliate-banner">
+        <p><i class="fa-solid fa-circle-info"></i> <strong>Affiliate Disclosure:</strong> ArtJeen.Store is a participant in affiliate programs. We earn a small commission on qualifying purchases at no extra cost to you.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>ArtJeen.Store</h3>
+                <p>Your one-stop shop for everything you need. Quality products, curated just for you.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fa-solid fa-envelope"></i> artjeen.store@gmail.com</p>
+                <p>For support, business inquiries, or collaboration, contact us anytime.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 ArtJeen.Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
