@@ -3,160 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO OPTIMIZATION -->
-    <title>ArtJeen.Store - Smart Affiliate Shopping Platform</title>
-    <meta name="description" content="ArtJeen.Store is your one-stop destination for Arts & Crafts, Fashion, Electronics, and more. Discover the best affiliate products here.">
-    <meta name="keywords" content="ArtJeen, Online Shopping, Affiliate, Fashion, Electronics, Home Decor, Amazon Alternative">
+    <meta name="description" content="ArtJeen.Store - Your premier destination for premium art supplies, trending gadgets, and lifestyle products via affiliate marketing.">
+    <meta name="keywords" content="Art Supplies, Sketchbooks, Markers, Paints, Online Shopping">
     <meta name="author" content="ArtJeen.Store">
+    <title>ArtJeen.Store | Premium Affiliate Marketplace</title>
     
-    <!-- Open Graph / Social Sharing -->
-    <meta property="og:title" content="ArtJeen.Store - Smart Affiliate Shopping">
-    <meta property="og:description" content="Shop the best products in Arts, Fashion, and Electronics.">
-    <meta property="og:image" content="https://placehold.co/600x315/131313/FFF?text=ArtJeen.Store">
-    <meta property="og:url" content="https://artjeen.store">
-    <meta property="og:type" content="website">
-
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Favicon Placeholder -->
-    <link rel="icon" href="https://placehold.co/32x32/131313/FFF?text=A" type="image/x-icon">
 </head>
 <body>
 
-    <!-- Sticky Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">ArtJeen.<span>Store</span></div>
-            
-            <!-- Mobile Menu Toggle -->
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
 
-            <div class="nav-links">
-                <a href="#" class="nav-link active" onclick="filterProducts('All')">Home</a>
-                <a href="#categories" class="nav-link">Categories</a>
-                <a href="#featured" class="nav-link">Featured</a>
-                <a href="#footer" class="nav-link">Contact</a>
-            </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">Art<span>Jeen</span>.Store</a>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for art supplies, electronics...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="#footer">Contact</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <h1>Discover Amazing Products</h1>
-            <p>Curated collections just for you.</p>
+            <h1>Unleash Your <span>Creative</span> Genius</h1>
+            <p>Discover the finest art supplies and trending products curated just for you.</p>
+            <a href="#products" class="btn-primary">Explore Now</a>
         </div>
+        <div class="hero-overlay"></div>
     </header>
 
-    <main class="container">
-        
-        <!-- Search Bar -->
-        <div class="search-wrapper">
-            <input type="text" id="searchInput" placeholder="Search for products, categories...">
-            <button><i class="fas fa-search"></i></button>
+    <!-- Categories Section -->
+    <section id="categories" class="container section-padding">
+        <h2 class="section-title">Shop by Category</h2>
+        <div class="category-grid" id="categoryContainer">
+            <!-- Categories injected via JS -->
         </div>
+    </section>
 
-        <!-- Categories -->
-        <section id="categories" class="categories-section">
-            <h2>Shop by Category</h2>
-            <div class="categories-grid">
-                <div class="cat-card" onclick="filterProducts('Arts & Craft Supplies')">
-                    <i class="fas fa-paint-brush"></i>
-                    <span>Arts & Craft</span>
-                </div>
-                <div class="cat-card" onclick="filterProducts('Fashion & Clothing')">
-                    <i class="fas fa-tshirt"></i>
-                    <span>Fashion</span>
-                </div>
-                <div class="cat-card" onclick="filterProducts('Shoes & Footwear')">
-                    <i class="fas fa-shoe-prints"></i>
-                    <span>Shoes</span>
-                </div>
-                <div class="cat-card" onclick="filterProducts('Electronics & Gadgets')">
-                    <i class="fas fa-mobile-alt"></i>
-                    <span>Electronics</span>
-                </div>
-                <div class="cat-card" onclick="filterProducts('Home & Lifestyle')">
-                    <i class="fas fa-couch"></i>
-                    <span>Home</span>
-                </div>
-                <div class="cat-card" onclick="filterProducts('Accessories & Gifts')">
-                    <i class="fas fa-gift"></i>
-                    <span>Gifts</span>
-                </div>
+    <!-- Products Section -->
+    <section id="products" class="container section-padding">
+        <div class="filter-bar">
+            <h2 class="section-title">Our Collection</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="Art Supplies">Art Supplies</button>
+                <button class="filter-btn" data-category="Electronics">Electronics</button>
+                <button class="filter-btn" data-category="Lifestyle">Lifestyle</button>
             </div>
-        </section>
+        </div>
+        
+        <div class="product-grid" id="productContainer">
+            <!-- Products injected via JS -->
+        </div>
+    </section>
 
-        <!-- New Arrivals -->
-        <section class="product-section" id="new-arrivals">
-            <h2><i class="fas fa-bolt"></i> New Arrivals</h2>
-            <div class="product-grid" id="newArrivalsGrid">
-                <!-- JS Injected Here -->
+    <!-- Trending / Featured Carousel -->
+    <section id="trending" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">Trending Picks 🔥</h2>
+            <div class="trending-slider" id="trendingContainer">
+                <!-- Trending items injected via JS -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Featured Products -->
-        <section class="product-section" id="featured">
-            <h2><i class="fas fa-star"></i> Top Featured Picks</h2>
-            <div class="product-grid" id="featuredGrid">
-                <!-- JS Injected Here -->
-            </div>
-        </section>
-
-        <!-- All Products Dynamic Area -->
-        <section class="product-section" id="all-products">
-            <div class="section-header">
-                <h2 id="currentCategoryTitle">All Products</h2>
-            </div>
-            <div class="product-grid" id="mainProductGrid">
-                <!-- JS Injected Here -->
-            </div>
-        </section>
-
-    </main>
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h3>Subscribe to ArtJeen.Store</h3>
+            <p>Get the latest updates on new art supplies and exclusive offers.</p>
+            <form id="newsletterForm">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer id="footer">
-        <div class="container footer-content">
-            <div class="footer-column">
+        <div class="footer-content container">
+            <div class="footer-col">
                 <h3>ArtJeen.Store</h3>
-                <p>Your trusted partner for smart shopping.</p>
-                <div class="socials">
+                <p>Your one-stop affiliate marketplace for creativity and lifestyle.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p><strong>Email:</strong> artjeen.store@gmail.com</p>
-                <p>For support, collaborations, or product inquiries, contact us anytime.</p>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
             </div>
-            <div class="footer-column">
-                <h3>Disclaimer</h3>
-                <p class="disclaimer">
-                    <i class="fas fa-info-circle"></i> 
-                    All products listed on ArtJeen.Store are affiliate products. We may earn a small commission at no extra cost to you.
-                </p>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fas fa-envelope"></i> artjeen.store@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Creative City, Web World</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 ArtJeen.Store. All rights reserved.</p>
+            <p>&copy; 2026 ArtJeen.Store — Affiliate Product Showcase</p>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top"><i class="fas fa-arrow-up"></i></button>
 
+    <!-- Toast Notification Container -->
+    <div id="toastContainer"></div>
+
+    <!-- Custom Script -->
     <script src="script.js"></script>
 </body>
 </html>
