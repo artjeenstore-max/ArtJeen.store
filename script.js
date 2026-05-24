@@ -1,246 +1,120 @@
-// ==========================================
-// 1. PRODUCT DATA SYSTEM (Easy to Edit)
-// ==========================================
+/* --- DATA CONFIGURATION --- */
 
+// 1. PRODUCT DATA MANAGEMENT
+// Edit this array to add or modify products.
+// Supports: Online Image URLs or Local paths like "images/product1.jpg"
 const products = [
+    // --- ART SUPPLIES (Main Category) ---
     {
-        name: "Professional Artist Sketch Kit",
-        image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&q=80",
-        description: "High-quality sketch pencils, charcoal set, and paper pad for professionals.",
+        id: 1,
+        name: "Professional Sakura Sketch Pen Set",
+        image: "https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "Premium quality sketch pens for artists and illustrators. Smooth flow and vibrant colors.",
+        price: "₹799",
+        category: "Art Supplies",
+        rating: 4.8,
+        badge: "Best Seller",
+        affiliate: "https://amazingcreator.com/affiliate/sakura-pen"
+    },
+    {
+        id: 2,
+        name: "Winsor & Newton Oil Paint Set",
+        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "High viscosity oil colors for professional artwork. 12-piece set.",
+        price: "₹2,500",
+        category: "Art Supplies",
+        rating: 4.9,
+        badge: "Trending",
+        affiliate: "https://amazingcreator.com/affiliate/oil-paint"
+    },
+    {
+        id: 3,
+        name: "Moleskine Hardcover Sketchbook",
+        image: "https://images.unsplash.com/photo-1544816155-12df9643f07a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "Premium lay-flat sketchbook suitable for graphite and charcoal.",
+        price: "₹650",
+        category: "Art Supplies",
+        rating: 4.6,
+        badge: "New",
+        affiliate: "https://amazingcreator.com/affiliate/sketchbook"
+    },
+    {
+        id: 4,
+        name: "Copic Markers Multiset",
+        image: "https://images.unsplash.com/photo-1615184697985-c9bde1b07da7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "Ultimate blending markers for comic and manga artists.",
+        price: "₹4,200",
+        category: "Art Supplies",
+        rating: 4.9,
+        badge: "Best Seller",
+        affiliate: "https://amazingcreator.com/affiliate/copic"
+    },
+
+    // --- ELECTRONICS ---
+    {
+        id: 5,
+        name: "Wacom Intuos Drawing Tablet",
+        image: "https://images.unsplash.com/photo-1527864550417-7fd91e74e9d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "Medium size digitizer for digital art creation.",
+        price: "₹6,500",
+        category: "Electronics",
+        rating: 4.7,
+        badge: "Trending",
+        affiliate: "https://amazingcreator.com/affiliate/wacom"
+    },
+    {
+        id: 6,
+        name: "Apple iPad Air 2024",
+        image: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "Powerful tablet for designers and note-takers.",
+        price: "₹59,900",
+        category: "Electronics",
+        rating: 4.9,
+        badge: "New",
+        affiliate: "https://amazingcreator.com/affiliate/ipad"
+    },
+
+    // --- LIFESTYLE & OTHERS ---
+    {
+        id: 7,
+        name: "Ergonomic Desk Chair",
+        image: "https://images.unsplash.com/photo-1505843490538-51304cbb1054?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "Comfortable mesh chair for long creative sessions.",
+        price: "₹8,999",
+        category: "Lifestyle",
+        rating: 4.5,
+        badge: "",
+        affiliate: "https://amazingcreator.com/affiliate/chair"
+    },
+    {
+        id: 8,
+        name: "Minimalist Watch",
+        image: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "Elegant timepiece for the modern creator.",
         price: "₹1,299",
-        category: "Arts & Craft Supplies",
-        affiliateLink: "https://example.com/sketch-kit",
-        featured: true
+        category: "Accessories",
+        rating: 4.3,
+        badge: "",
+        affiliate: "https://amazingcreator.com/affiliate/watch"
     },
     {
-        name: "Acrylic Paint Set - 24 Colors",
-        image: "https://images.unsplash.com/photo-1518895312252-25b03aee1a7f?w=500&q=80",
-        description: "Non-toxic acrylic paints suitable for canvas, wood, and fabric.",
-        price: "₹899",
-        category: "Arts & Craft Supplies",
-        affiliateLink: "https://example.com acrylic-paints",
-        featured: false
+        id: 9,
+        name: "Sony WH-1000XM4 Headphones",
+        image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "Noise cancelling wireless headphones.",
+        price: "₹18,990",
+        category: "Electronics",
+        rating: 4.9,
+        badge: "Best Seller",
+        affiliate: "https://amazingcreator.com/affiliate/sony-headphones"
     },
     {
-        name: "Premium Cotton T-Shirt",
-        image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=500&q=80",
-        description: "100% organic cotton, breathable fabric. Perfect for daily wear.",
-        price: "₹599",
-        category: "Fashion & Clothing",
-        affiliateLink: "https://example.com/tshirt",
-        featured: true
-    },
-    {
-        name: "Denim Jacket - Classic Fit",
-        image: "https://images.unsplash.com/photo-1523205565295-f8e916256112?w=500&q=80",
-        description: "Vintage style denim jacket with multiple pockets.",
-        price: "₹1,499",
-        category: "Fashion & Clothing",
-        affiliateLink: "https://example.com/denim-jacket",
-        featured: false
-    },
-    {
-        name: "Running Sneakers - Air Cushion",
-        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80",
-        description: "Lightweight running shoes with air cushion technology.",
-        price: "₹2,199",
-        category: "Shoes & Footwear",
-        affiliateLink: "https://example.com/sneakers",
-        featured: true
-    },
-    {
-        name: "Casual Canvas Shoes",
-        image: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80",
-        description: "Stylish canvas shoes for casual outings. Durable and comfortable.",
-        price: "₹899",
-        category: "Shoes & Footwear",
-        affiliateLink: "https://example.com/canvas-shoes",
-        featured: false
-    },
-    {
-        name: "Wireless Bluetooth Headphones",
-        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80",
-        description: "Noise-canceling headphones with 30-hour battery life.",
-        price: "₹2,999",
-        category: "Electronics & Gadgets",
-        affiliateLink: "https://example.com/headphones",
-        featured: true
-    },
-    {
-        name: "Smart Watch - Fitness Tracker",
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80",
-        description: "Track heart rate, steps, and sleep. Waterproof design.",
-        price: "₹3,499",
-        category: "Electronics & Gadgets",
-        affiliateLink: "https://example.com/smart-watch",
-        featured: true
-    },
-    {
-        name: "Minimalist Table Lamp",
-        image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=500&q=80",
-        description: "Modern LED table lamp with touch dimmer.",
-        price: "₹1,199",
-        category: "Home & Lifestyle",
-        affiliateLink: "https://example.com/lamp",
-        featured: false
-    },
-    {
-        name: "Soft Cotton Bed Sheets",
-        image: "https://images.unsplash.com/photo-1616627180082-1f088458321b?w=500&q=80",
-        description: "400 thread count Egyptian cotton bed sheets. Fade resistant.",
-        price: "₹1,899",
-        category: "Home & Lifestyle",
-        affiliateLink: "https://example.com/bedsheets",
-        featured: true
-    },
-    {
-        name: "Leather Wallet - Slim Design",
-        image: "https://images.unsplash.com/photo-1627123424574-181ce5171c98?w=500&q=80",
-        description: "Genuine leather wallet with RFID protection.",
-        price: "₹699",
-        category: "Accessories & Gifts",
-        affiliateLink: "https://example.com/wallet",
-        featured: false
-    },
-    {
-        name: "Designer Sunglasses",
-        image: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500&q=80",
-        description: "UV400 protection with polarized lenses. Stylish frame.",
-        price: "₹899",
-        category: "Accessories & Gifts",
-        affiliateLink: "https://example.com/sunglasses",
-        featured: true
-    }
-];
-
-// Fallback image for broken URLs
-const fallbackImage = "https://placehold.co/400x400/131313/FFF?text=No+Image";
-
-// ==========================================
-// 2. DOM ELEMENTS
-// ==========================================
-
-const mainGrid = document.getElementById('mainProductGrid');
-const newArrivalsGrid = document.getElementById('newArrivalsGrid');
-const featuredGrid = document.getElementById('featuredGrid');
-const searchInput = document.getElementById('searchInput');
-const categoryTitle = document.getElementById('currentCategoryTitle');
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-const mobileToggle = document.querySelector('.mobile-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-// ==========================================
-// 3. FUNCTIONS
-// ==========================================
-
-// Generate Product Card HTML
-function createProductCard(product) {
-    return `
-        <div class="product-card">
-            <div class="product-image">
-                <img src="${product.image}" alt="${product.name}" onerror="this.src='${fallbackImage}'">
-                <span class="category-tag">${product.category}</span>
-            </div>
-            <div class="product-info">
-                <h3 class="product-name">${product.name}</h3>
-                <p class="product-desc">${product.description}</p>
-                <div class="product-price">${product.price}</div>
-                <a href="${product.affiliateLink}" target="_blank" class="buy-btn">
-                    Buy Now <i class="fas fa-external-link-alt"></i>
-                </a>
-            </div>
-        </div>
-    `;
-}
-
-// Render Products to Grid
-function renderProducts(gridElement, productList) {
-    if (productList.length === 0) {
-        gridElement.innerHTML = '<p class="no-products">No products found.</p>';
-        return;
-    }
-    gridElement.innerHTML = productList.map(product => createProductCard(product)).join('');
-}
-
-// Filter Products by Category
-function filterProducts(category) {
-    const titleMap = {
-        "All": "All Products",
-        "Arts & Craft Supplies": "Arts & Craft Supplies",
-        "Fashion & Clothing": "Fashion & Clothing",
-        "Shoes & Footwear": "Shoes & Footwear",
-        "Electronics & Gadgets": "Electronics & Gadgets",
-        "Home & Lifestyle": "Home & Lifestyle",
-        "Accessories & Gifts": "Accessories & Gifts"
-    };
-
-    categoryTitle.innerText = titleMap[category] || "All Products";
-
-    if (category === 'All') {
-        renderProducts(mainGrid, products);
-    } else {
-        const filtered = products.filter(p => p.category === category);
-        renderProducts(mainGrid, filtered);
-    }
-    
-    // Smooth scroll
-    document.getElementById('all-products').scrollIntoView({ behavior: 'smooth' });
-}
-
-// Search Functionality
-function handleSearch(query) {
-    const lowerQuery = query.toLowerCase().trim();
-
-    if (lowerQuery === "") {
-        filterProducts("All");
-        return;
-    }
-
-    const filtered = products.filter(product => 
-        product.name.toLowerCase().includes(lowerQuery) || 
-        product.category.toLowerCase().includes(lowerQuery) ||
-        product.description.toLowerCase().includes(lowerQuery)
-    );
-
-    categoryTitle.innerText = `Search Results for "${query}"`;
-    renderProducts(mainGrid, filtered);
-}
-
-// Mobile Menu Toggle
-function toggleMobileMenu() {
-    navLinks.classList.toggle('active');
-}
-
-// ==========================================
-// 4. INITIALIZATION
-// ==========================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // Render All Products
-    renderProducts(mainGrid, products);
-
-    // Render New Arrivals (First 4 products)
-    renderProducts(newArrivalsGrid, products.slice(0, 4));
-
-    // Render Featured Products (Filter by featured: true)
-    const featuredProducts = products.filter(p => p.featured);
-    renderProducts(featuredGrid, featuredProducts);
-
-    // Search Event Listener
-    searchInput.addEventListener('input', (e) => {
-        handleSearch(e.target.value);
-    });
-
-    // Mobile Menu Click
-    mobileToggle.addEventListener('click', toggleMobileMenu);
-});
-
-// Scroll to Top Button Visibility
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 200) {
-        scrollTopBtn.style.display = 'block';
-    } else {
-        scrollTopBtn.style.display = 'none';
-    }
-});
+        id: 10,
+        name: "Mechanical Gaming Keyboard",
+        image: "https://images.unsplash.com/photo-1587829741301-dc798b91a45e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+        description: "RGB backlit keyboard for coders and gamers.",
+        price: "₹3,500",
+        category: "Gaming",
+        rating: 4.6,
+        badge: "Trending",
+        affiliate: "https://amazingcreator.com/affiliate/keyboard"
